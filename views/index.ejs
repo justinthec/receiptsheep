@@ -1,25 +1,115 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <!-- Main CSS -->
+    <link type="text/css" rel="stylesheet" href="stylesheets/style.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body onload=jsload()>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
-    <br><br>
-    <h4>Camera upload here: </h4>
-    <form method="POST" id='image-form' enctype="multipart/form-data">
-
-      <input type="file" id="image-select" accept="image/*" capture="camera" name="image">
-      <br>
-      <button type="submit" id="upload-button">Upload Image</button>
-    </form>
-    <br>
-
-    <div id="upload-status">Idle</div>
-
+  <body>
+    <div class="container">
+      <!-- Logo -->
+      <div class="row">
+        <div class="col s12">
+          <div id="logo-container">
+            <a href="/">
+              <div id="logo"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Buttons -->
+      <div class="row">
+        <div class="col s6">
+          <a href="/upload" class="waves-effect waves-light btn-large upload">Upload Receipt</a>
+        </div>
+        <div class="col s6">
+          <a class="waves-effect waves-light btn-large queue">Queue</a>
+        </div>
+      </div>
+      <!-- Queue Information -->
+      <div class="row">
+        <div class="col s12">
+          <div class="collection">
+            <a href="#!" class="collection-item">Escalated Review Queue<span class="new badge">5</span></a>
+          </div>
+        </div>
+      </div>
+      <!-- Recent Journal Entries -->
+      <p class="line-items">Recent Journal Entries</p>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th data-field="id">Date</th>
+            <th data-field="name">Description</th>
+            <th data-field="price">Category</th>
+            <th data-field="price">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>19/09/2015</td>
+            <td>StarCraft 2 Expansion</td>
+            <td>Video Games Expense</td>
+            <td>$69.99</td>
+          </tr>
+          <tr>
+            <td>10/09/2015</td>
+            <td>24 Pack Red Bull Energy Drinks</td>
+            <td>Food Expense</td>
+            <td>$9.99</td>
+          </tr>
+          <tr>
+            <td>03/09/2015</td>
+            <td>Binders From Book Store</td>
+            <td>School Supplies Expense</td>
+            <td>$7.15</td>
+          </tr>
+          <tr>
+            <td>11/08/2015</td>
+            <td>Macbook Pro</td>
+            <td>Comuter Hardware Expense</td>
+            <td>$2250.75</td>
+          </tr>
+          <tr>
+            <td>01/08/2015</td>
+            <td>Plastic Chairs</td>
+            <td>Office Expense</td>
+            <td>$50.75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <!-- Footer -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="grey-text">Save Time, Save Money</h5>
+            <p class="grey-text text-lighten-1">Use Receipt Sheep to streamline the receipt collecting, documentation and approval process.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2015 Receipt Sheep
+          <a class="grey-text text-lighten-1 right" href="https://github.com/justinthec/receiptsheep" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery and Materialize JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="javascripts/main.js"></script>
   </body>
-  <script src="/javascripts/upload-image.js"></script>
 </html>

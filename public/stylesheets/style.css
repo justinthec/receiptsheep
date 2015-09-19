@@ -1,8 +1,52 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#logo-container {
+	margin: auto;
+	max-width: 450px;
+}
+#logo {
+	max-width: 450px;
+	width: 100%;
+	background-image: url("../images/receipt-sheep-logo.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 120px;
+}
+#logo:hover {
+	background-image: url("../images/receipt-sheep-logo-2.png");
+}
+.upload {
+	width: 100%;
+}
+.queue {
+	background-color: #114C47;
+	width: 100%;
+}
+footer.page-footer {
+	background-color: #26a69a !important;
+}
+
+/* RECEIPT UPLOADING PAGE */
+.upload-receipt {
+	background-color: #373737 !important;
+	margin-bottom: 25px;
+}
+.line-items {
+	font-size: 18px;
+}
+
+/** FOOTER **/
+
+footer.page-footer {
+	background-color: #f2f2f2 !important;
+}
+footer.page-footer .footer-copyright {
+	color: #9e9e9e;
 }
