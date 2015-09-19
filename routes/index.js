@@ -15,7 +15,7 @@ router.get('/queue', function(req, res, next) {
 });
 
 router.get('/callback', function(req, res, next){
-	res.render('callback');
-})
+	res.render('callback', { title: 'Receipt Sheep - Callback' });
+});
 
 module.exports = router;
