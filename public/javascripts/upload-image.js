@@ -14,8 +14,10 @@ form.onsubmit = function(event) {
   console.log(status.innerHTML);
 
   // Update button text.
-  status.innerHTML = 'Uploading...';
   var files = uploadbox.files;
+  if (files.length === 0)
+    return;
+  status.innerHTML = 'Uploading...';
 
   var formData = new FormData();
 
@@ -36,7 +38,7 @@ form.onsubmit = function(event) {
   xmlreq.open('POST', '/image', true);
   xmlreq.onreadystatechange = function() {
     if (xmlreq.readyState >= 3) {
-      if (xmlreq.response ==  "Success")
+      if (xmlreq.responseText && xmlreq.responseText[0]==='{') // got JSON
         status.innerHTML = "Upload complete.";
       else
         status.innerHTML = "Upload failed.";

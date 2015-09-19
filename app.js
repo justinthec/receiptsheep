@@ -21,6 +21,16 @@ fs.readFile('db/db.json', 'utf8', function(err, data) {
   dbjson = JSON.parse(data);
 });
 
+setInterval(function() {
+  fs.writeFile("db/db.json",JSON.stringify(dbjson), function(err) {
+    if (err) {
+      //handle
+    }
+
+  });
+  console.log("Saved");
+}, 10000);
+
 
 
 function dbAdderMiddleware(req, res, next){
