@@ -1,0 +1,33 @@
+{
+  "name": "receiptsheep",
+  "version": "1.0.0",
+  "description": "Integrated OCR receipt and payment system",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinthec/receiptsheep.git"
+  },
+  "keywords": [
+    "receipt"
+  ],
+  "author": "justinthec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinthec/receiptsheep/issues"
+  },
+  "dependencies": {
+    "imagemagick": "^0.1.3",
+    "node-tesseract": "^0.2.7"
+  },
+  "engine": {
+    "node": "^0.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "homepage": "https://github.com/justinthec/receiptsheep#readme"
+}
