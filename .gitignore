@@ -94,3 +94,4 @@ Session.vim
 # sftp configuration file
 sftp-config.json
 
+image-dir/*
