@@ -41,16 +41,19 @@ router.post('/', [upload, function(req, res, next) {
 
     //parser json file goes here
     var ocrscript = require('../lib/ocrscript');
-    ocrscript.runOCR('./public/scans/'+newFileName, __dirname + '/../lib/temp.txt');
-    var file = fs.readFileSync(__dirname + '/../lib/temp.txt', 'utf8');
-    expenseJSON.text = file;
 
 
+    function runAfterOCR() {
+      var file = fs.readFileSync(__dirname + '/../lib/temp.txt', 'utf8');
+      expenseJSON.text = file;
+      dbjson.push(expenseJSON); //Test
 
-  dbjson.push(expenseJSON); //Test
+      res.send(JSON.stringify(expenseJSON));
+    }
+    // The following references the above callback
+    ocrscript.runOCR('./public/scans/'+newFileName, './lib/temp.txt', runAfterOCR);
 
 
-  res.send(JSON.stringify(expenseJSON));
 }]);
 
 module.exports = router;
