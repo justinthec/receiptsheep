@@ -55,6 +55,7 @@ app.use(dbAdderMiddleware);
 
 app.use('/', routes);
 app.use('/image', image);
+app.use('/queue', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

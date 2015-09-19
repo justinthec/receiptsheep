@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/upload', function(req, res, next) {
-  res.render('index', { title: 'Receipte Sheep - Upload' });
-})
+  res.render('index', { title: 'Receipt Sheep - Upload' });
+});
+
+router.get('/queue', function(req, res, next) {
+  res.render('queue', { title: 'Receipt Sheep - Queue' });
+});
 
 module.exports = router;
