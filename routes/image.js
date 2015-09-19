@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var fs = require('fs');
-var ocrscript = require('../lib/ocrscript');
 
 
 var upload = multer({
@@ -41,6 +40,7 @@ router.post('/', [upload, function(req, res, next) {
   expenseJSON.id = parseInt(newFileName, 10);
 
     //parser json file goes here
+    var ocrscript = require('../lib/ocrscript');
     ocrscript.runOCR('./public/scans/'+newFileName, __dirname + '/../lib/temp.txt');
     var file = fs.readFileSync(__dirname + '/../lib/temp.txt', 'utf8');
     expenseJSON.text = file;
