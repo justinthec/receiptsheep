@@ -3,7 +3,7 @@ var router = express.Router();
 var multer = require('multer');
 
 var upload = multer({
-    dest: './image-dir/',
+    dest: './public/images/',
     limits: {fileSize: 10000000, files:1}
 });
 
@@ -16,6 +16,12 @@ router.get('/', function(req, res, next) {
 router.post('/', [upload, function(req, res, next) {
 
   console.log(req.files);
+
+  var filename = req.files.image.name;
+  //var extension
+  console.log(filename);
+
+  //fs.rename('./public/images/'+filename, './public/images/'+ (new Date().getTime())+filename.split('.')
 
 
   res.send('Success');

@@ -95,3 +95,4 @@ Session.vim
 sftp-config.json
 
 image-dir/*
+public/images/*

@@ -8,8 +8,25 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var image = require('./routes/image');
 
+var fs = require('fs');
+
 var app = express();
 
+var dbjson = [];
+fs.readFile('db/db.json', 'utf8', function(err, data) {
+  if (err) {
+    // handle
+    dbjson=[];
+  }
+  dbjson = JSON.parse(data);
+});
+
+
+
+function dbAdderMiddleware(req, res, next){
+  req.dbjson = dbjson;
+  next();
+}
 
 
 // view engine setup
@@ -23,6 +40,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(dbAdderMiddleware);
 
 
 app.use('/', routes);
