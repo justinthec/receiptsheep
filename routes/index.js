@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'receiptsheep' });
+  res.render('index', { title: 'Receipt Sheep - Home' });
 });
 
 router.get('/upload', function(req, res, next) {
-  res.render('index', { title: 'receiptsheep' });
+  res.render('index', { title: 'Receipte Sheep - Upload' });
 })
 
 module.exports = router;
