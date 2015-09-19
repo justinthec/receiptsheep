@@ -4,19 +4,22 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
+  <body onload=jsload()>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
     <br><br>
     <h4>Camera upload here: </h4>
-    <form action="/image" method="POST" id='image-form' enctype="multipart/form-data">
+    <form method="POST" id='image-form' enctype="multipart/form-data">
 
       <input type="file" id="image-select" accept="image/*" capture="camera" name="image">
       <br>
       <button type="submit" id="upload-button">Upload Image</button>
     </form>
+    <br>
+
+    <div id="upload-status">Idle</div>
 
   </body>
-  <!--script src="/javascripts/upload-image.js"></script-->
+  <script src="/javascripts/upload-image.js"></script>
 </html>

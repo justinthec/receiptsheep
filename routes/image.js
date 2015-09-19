@@ -14,13 +14,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', [upload, function(req, res, next) {
-  //res.render('image', { title: 'receiptsheep' });
-  //console.log(req);
-  //console.log(res);
 
-  //console.log(req.body);
   console.log(req.files);
-  //console.log(req.files);
+
 
   res.send('Success');
 }]);
