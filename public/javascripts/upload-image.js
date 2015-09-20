@@ -20,7 +20,8 @@ form.onsubmit = function(event) {
   var files = uploadbox.files;
   if (files.length === 0)
     return;
-  status.innerHTML = 'Uploading...';
+  Materialize.toast('Image is uploading...', 12000);
+  // status.innerHTML = 'Uploading...';
 
   var formData = new FormData();
 
@@ -40,9 +41,10 @@ form.onsubmit = function(event) {
 
   xmlreq.open('POST', '/image', true);
   xmlreq.onreadystatechange = function() {
-    if (xmlreq.readyState >= 3) {
+    if (xmlreq.readyState === 4) {
       if (xmlreq.responseText && xmlreq.responseText[0]==='{') { // got JSON
-        status.innerHTML = "Upload complete.";
+        Materialize.toast('Upload is complete!', 4000);
+        // status.innerHTML = "Upload complete.";
         $(receiptWrap).show();
 
         var json = JSON.parse(xmlreq.responseText);
@@ -52,7 +54,8 @@ form.onsubmit = function(event) {
         receiptImage.src = json.imageLocation;
       }
       else
-        status.innerHTML = "Upload failed.";
+        Materialize.toast('Upload has failed.', 4000);
+        // status.innerHTML = "Upload failed.";
     }
     console.log(xmlreq.readyState);
     console.log(xmlreq.responseText);

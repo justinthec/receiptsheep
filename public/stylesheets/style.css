@@ -51,12 +51,39 @@ footer.page-footer {
 .card-title {
 	text-shadow: 3px 3px 3px #000000;
 }
+.info-title {
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 15px;
+}
+.button-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.button-container .success {
+	background-color: #4caf50;
+	width: 100%;
+}
+.button-container .success:hover {
+	background-color: #1b5e20;
+}
+.button-container .danger {
+	background-color: #ff5722;
+	width: 100%;
+}
+.button-container .danger:hover {
+	background-color: #bf360c;
+}
 
 /** FOOTER **/
-
 footer.page-footer {
 	background-color: #f2f2f2 !important;
 }
 footer.page-footer .footer-copyright {
 	color: #9e9e9e;
+}
+
+/* TOAST STYLING */
+.toast {
+	background-color: #01579b;
 }
