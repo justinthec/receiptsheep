@@ -4,7 +4,7 @@
 
 
 // var 1430784435
-function testCall()
+function intuitExpense(name, price)
 {
 	var QuickBooks = require('node-quickbooks')
  
@@ -55,6 +55,10 @@ function testCall()
 		  ]
 		};
 
+	new_entry["Line"][0]["Amount"] = price;
+	new_entry["PrivateNote"]= name;
+	new_entry["TxnDate"] = new Date();
+
 	qbo.createPurchase(new_entry, function(e, obj){
 
 	});
@@ -64,5 +68,5 @@ function testCall()
 }
 
 module.exports = {
-	callfunc: testCall
+	intuitExpense: intuitExpense
 };
