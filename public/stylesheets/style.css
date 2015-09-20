@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
 }
 
 a {
@@ -47,6 +47,11 @@ footer.page-footer {
 	max-width: 600px;
 	width: 100%;
 	margin: auto;
+	-webkit-transition: 0s 2s all cubic-bezier(0.4, 0, 1, 1);
+    -transition: 0s 2s all cubic-bezier(0.4, 0, 1, 1);
+}
+.card.approved {
+	left: 400px;
 }
 .card-title-queue {
 	text-shadow: 3px 3px 3px #000000;
@@ -73,6 +78,9 @@ footer.page-footer {
 }
 .button-container .danger:hover {
 	background-color: #bf360c;
+}
+.card .card-image img {
+	max-height: 250px;
 }
 
 /** FOOTER **/

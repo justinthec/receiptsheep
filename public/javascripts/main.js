@@ -2,16 +2,10 @@
 $(document).ready(function(){
 
   $("#approve").click(function(){
-    $('.card').fadeOut( "slow", function() {
-      location.reload(true);
-    });        
+    $(this).hide('slide',{direction:'right'},1000);     
   });  
 
   $("#decline").click(function(){
-    $('.card').fadeOut( "slow", function() {
-      location.reload(true);
-    });
+    $(this).hide('slide',{direction:'left'},1000);
   });
 });
-
-/* Inserting Cards */

@@ -1,5 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+
+var dbjson = [];
+fs.readFile('db/db.json', 'utf8', function(err, data) {
+	if (err) {
+		dbjson=[];
+	}
+	dbjson = JSON.parse(data);
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/queue', function(req, res, next) {
-  res.render('queue', { title: 'Receipt Sheep - Queue' });
+  res.render('queue', { title: 'Receipt Sheep - Queue' , queue: dbjson});
 });
 
 router.get('/upload', function(req, res, next) {
@@ -39,6 +48,10 @@ router.get('/data', function(req, res, next) {
 router.delete('/data/:id',function(req, res, next) {
   delete req.dbjson[req.params.id];
   res.send("Deleted");
+});
+
+router.get('/queue', function(req, res, next) {
+  res.render('queue', { title: 'Receipt Sheep - Queue', queue: dbjson });
 });
 
 module.exports = router;
