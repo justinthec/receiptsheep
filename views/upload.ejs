@@ -57,37 +57,12 @@
 							<img class="activator" id="receipt">
 						</div>
 						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Receipt Preview<i class="material-icons right">more_vert</i></span>
+							<span class="card-title activator grey-text text-darken-4">Receipt Data<i class="material-icons right">more_vert</i></span>
 							<p><a href="#"></a></p>
 						</div>
 						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Receipt Preview<i class="material-icons right">close</i></span>
-							<p>Company Name: Swags R Us</p>
-							<p>Date: 19/09/2015</p>
-							<p>Address: 258 King St. N Waterloo, ON</p>
-							<p>Phone Number: (519) 747-2690</p>
-							<table>
-								<thead>
-									<tr>
-										<th data-field="">Description</th>
-										<th data-field="">Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Eclair</td>
-										<td>$0.87</td>
-									</tr>
-									<tr>
-										<td>Jellybean</td>
-										<td>$3.76</td>
-									</tr>
-									<tr>
-										<td>Lollipop</td>
-										<td>$7.00</td>
-									</tr>
-								</tbody>
-							</table>
+							<span class="card-title grey-text text-darken-4">Receipt Data<i class="material-icons right">close</i></span>
+							<p id="receipt-preview"></p>
 						</div>
 					</div>
 				</div>
@@ -100,7 +75,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="businessName" type="text" class="validate" value="Swags R Us">
+							<input id="businessName" type="text" class="validate" value="">
 							<label for="businessName">Business Name</label>
 						</div>
 					</div>
@@ -151,6 +126,12 @@
 						<div class="input-field col s4">
 							<input id="lineItem3Price" type="text" class="validate" value="7.00">
 							<label for="lineItem3Price">Price</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="totalPrice" type="text" class="validate" value="">
+							<label for="address">Total Price</label>
 						</div>
 					</div>
 					<div class="row">

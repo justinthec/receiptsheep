@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var fs = require('fs');
+var parser = require(__dirname + '/../lib/parser.js');
 
 
 var upload = multer({
@@ -45,10 +46,13 @@ router.post('/', [upload, function(req, res, next) {
 
     function runAfterOCR() {
       var file = fs.readFileSync(__dirname + '/../lib/temp.txt', 'utf8');
-      console.log("myfile: " + file);
-      expenseJSON.text = file;
+      console.log("file: " + file);
+      expenseJSON.full_text = file;
       dbjson.push(expenseJSON); //Test
 
+      // Add expense attributes
+      expenseJSON.total_price = parser.parseTotalPrice(file);
+      expenseJSON.business_name = parser.parseBusinessName(file);
       res.send(JSON.stringify(expenseJSON));
     }
     // The following references the above callback

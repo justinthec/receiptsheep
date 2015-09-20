@@ -49,9 +49,12 @@ form.onsubmit = function(event) {
 
         var json = JSON.parse(xmlreq.responseText);
 
-
-
         receiptImage.src = json.imageLocation;
+        document.getElementById("receipt-preview").innerHTML = json.full_text.replace(/\r\n/g, "<br>");
+        var businessName = document.getElementById("businessName");
+        $(businessName).focus().val(json.business_name).focusout();
+        var totalPrice = document.getElementById("totalPrice");
+        $(totalPrice).focus().val(json.total_price).focusout();
       }
       else
         Materialize.toast('Upload has failed.', 4000);
