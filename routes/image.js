@@ -45,6 +45,7 @@ router.post('/', [upload, function(req, res, next) {
 
     function runAfterOCR() {
       var file = fs.readFileSync(__dirname + '/../lib/temp.txt', 'utf8');
+      console.log("myfile: " + file);
       expenseJSON.text = file;
       dbjson.push(expenseJSON); //Test
 
