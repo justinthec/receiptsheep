@@ -12,5 +12,4 @@ $(document).ready(function(){
     $('.card').find('.status').remove();
     $(this).append('<div class="status decline">Declined</div>');
   });
-
 });
