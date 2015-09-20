@@ -20,7 +20,7 @@ form.onsubmit = function(event) {
   var files = uploadbox.files;
   if (files.length === 0)
     return;
-  Materialize.toast('Image is uploading...', 12000);
+  Materialize.toast('Image is uploading...', 20000);
   // status.innerHTML = 'Uploading...';
 
   var formData = new FormData();
@@ -43,7 +43,7 @@ form.onsubmit = function(event) {
   xmlreq.onreadystatechange = function() {
     if (xmlreq.readyState === 4) {
       if (xmlreq.responseText && xmlreq.responseText[0]==='{') { // got JSON
-        Materialize.toast('Upload is complete!', 4000);
+        Materialize.toast('Upload is complete!', 6000);
         // status.innerHTML = "Upload complete.";
         $(receiptWrap).show();
 

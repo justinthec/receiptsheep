@@ -1,32 +1,4 @@
-
-#container {
-  width: 500px;
-  margin: auto !important;
-  display: block;
-  height: 500px;
-  position: relative;
-  list-style-type: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.buddy {
-  display: none;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  color: #fff;
-  padding: 20px;
-  width: 360px;
-  height: 360px;
-  top: 50px;
-  left: 50px;
-  position: absolute;
-  cursor: hand;
-}
+/* QUEUE ANIMATIONS */
 .rotate-left {
   transform: rotate(30deg) scale(0.8);
   transition: 1s;
@@ -41,115 +13,29 @@
   margin-left: -400px;
   cursor: w-resize;
 }
-.avatar {
-  background: #222;
-  width: 340px;
-  height: 340px;
-  display: block;
-  margin-top: 10px;
-  margin-left: 10px;
-  background-size: 100% auto !important;
-  background-position: center;
-#box {
-  width: 500px;
-  margin: auto !important;
-  display: block;
-  height: 500px;
-  position: relative;
-  list-style-type: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.buddy {
-  display: none;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  color: #fff;
-  padding: 20px;
-  width: 360px;
-  height: 360px;
-  top: 50px;
-  left: 50px;
-  position: absolute;
-  cursor: hand;
-}
-.rotate-left {
-  transform: rotate(30deg) scale(0.8);
-  transition: 1s;
-  margin-left: 400px;
-  cursor: e-resize;
-  opacity: 0;
-}
-.rotate-right {
-  transform: rotate(-30deg) scale(0.8);
-  transition: 1s;
-  opacity: 0;
-  margin-left: -400px;
-  cursor: w-resize;
-}
-.avatar {
-  background: #222;
-  width: 340px;
-  height: 340px;
-  display: block;
-  margin-top: 10px;
-  margin-left: 10px;
-  background-size: 100% auto !important;
-  background-position: center;
- background-repeat: no-repeat;
-}
-.like {
+.approve {
   border-radius: 5px;
   padding: 5px 10px;
-  border: 2px solid green;
-  color: green;
+  border: 2px solid #4caf50;
+  background-color: #4caf50;
+  color: white;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 25px;
   position: absolute;
-  top: 50px;
-  right: 40px;
+  top: 40px;
+  right: 60px;
   text-shadow: none;
 }
-.dislike {
+.decline {
   border-radius: 5px;
   padding: 5px 10px;
-  border: 2px solid red;
-  color: red;
+  border: 2px solid #f44336;
+  background-color: #f44336;
+  color: white;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 25px;
   position: absolute;
-  top: 50px;
-  left: 40px;
-  text-shadow: none;
-}
- background-repeat: no-repeat;
-}
-.like {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 2px solid green;
-  color: green;
-  text-transform: uppercase;
-  font-size: 15px;
-  position: absolute;
-  top: 50px;
-  right: 40px;
-  text-shadow: none;
-}
-.dislike {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 2px solid red;
-  color: red;
-  text-transform: uppercase;
-  font-size: 15px;
-  position: absolute;
-  top: 50px;
-  left: 40px;
+  top: 40px;
+  right: 60px;
   text-shadow: none;
 }
