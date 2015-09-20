@@ -10,6 +10,13 @@ var receiptWrap = document.getElementById('receipt-block')
 var receiptImage = document.getElementById('receipt');
 //receiptImage.hide();
 
+var editForm = document.getElementById('edit-form');
+var businessName = document.getElementById("businessName");
+var phoneNumber = document.getElementById("phoneNumber");
+var address = document.getElementById("address");
+var totalPrice = document.getElementById("totalPrice");
+
+
 console.log(status.innerHTML);
 
 form.onsubmit = function(event) {
@@ -50,21 +57,20 @@ form.onsubmit = function(event) {
         var json = JSON.parse(xmlreq.responseText);
 
         receiptImage.src = json.imageLocation;
+        receiptImage.POSTid = json.id;
+
         document.getElementById("receipt-preview").innerHTML = json.full_text.replace(/\r\n/g, "<br>");
 
-        var businessName = document.getElementById("businessName");
         if (json.business_name != "None found.")
           $(businessName).val(json.business_name).change();
         else
           $(businessName).attr("placeholder", json.business_name).change();
 
-        var phoneNumber = document.getElementById("phoneNumber");
         if (json.phone_number != "None found.")
           $(phoneNumber).val(json.phone_number).change();
         else
           $(phoneNumber).attr("placeholder", json.phone_number).change();
 
-        var address = document.getElementById("address");
         if (json.address != "None found.")
           $(address).val(json.address).change();
         else
@@ -122,5 +128,48 @@ form.onsubmit = function(event) {
 }
 
 
+editForm.onsubmit = function(event) {
+  event.preventDefault();
+
+  var id = receiptImage.POSTid;
+  if (!id) {
+    console.log("Cannot update fields without scan");
+  }
+
+  var formData = new FormData();
+  formData.append("id", id);
+  formData.append("businessName", businessName.value);
+  formData.append("phoneNumber", phoneNumber.value);
+  formData.append("address", address.value);
+  formData.append("totalPrice", totalPrice.value);
+
+  var obj = {"id":id,
+                "businessName": businessName.value,
+                "phoneNumber": phoneNumber.value,
+                "address": address.value,
+                "totalPrice": totalPrice.value};
+  var params = Object.keys(obj).map(function(o) {
+    return [o, obj[o]].join("=");
+  }).join("&");
+
+  var xmlreq = new XMLHttpRequest();
+
+  xmlreq.open('POST', '/data', true);
+  xmlreq.onreadystatechange = function() {
+    if (xmlreq.readyState === 4) {
+      if (xmlreq.responseText && xmlreq.responseText==='Success') { // got JSON
+        Materialize.toast('Updated fields', 6000);
+      }
+      else
+        Materialize.toast('Update failed.', 4000);
+        // status.innerHTML = "Upload failed.";
+    }
+    console.log(xmlreq.readyState);
+    console.log(xmlreq.responseText);
+  };
+  xmlreq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+  xmlreq.send(params);
+};
 
 };

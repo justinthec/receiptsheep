@@ -69,13 +69,16 @@
 			</div>
 			<!-- Editable Grabbed Information Area -->
 			<div class="row">
-				<form class="col s12">
+
+
+
+				<form method="POST" id='edit-form' enctype="multipart/form-data" class="col s12">
 					<div class="row">
 						<h5>Verify and Submit Receipt Information</h5>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="businessName" type="text" class="validate" value="">
+							<input name="businessName" id="businessName" type="text" class="validate" value="">
 							<label for="businessName">Business Name</label>
 						</div>
 					</div>
@@ -87,13 +90,13 @@
 					</div>
 -->					<div class="row">
 						<div class="input-field col s12">
-							<input id="address" type="text" class="validate" value="">
+							<input name="address" id="address" type="text" class="validate" value="">
 							<label for="address">Address</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="phoneNumber" type="text" class="validate" value="">
+							<input name="phoneNumber" id="phoneNumber" type="text" class="validate" value="">
 							<label for="phoneNumber">Phone Number</label>
 						</div>
 					</div>
@@ -101,7 +104,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="totalPrice" type="text" class="validate" value="">
+							<input name="totalPrice" id="totalPrice" type="text" class="validate" value="">
 							<label for="address">Total Price</label>
 						</div>
 					</div>

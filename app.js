@@ -12,13 +12,13 @@ var fs = require('fs');
 
 var app = express();
 
-var dbjson = [];
+var dbjson = {};
 fs.readFile('db/db.json', 'utf8', function(err, data) {
-  if (err) {
+  if (err || data[0] !='{') {
     // handle
-    dbjson=[];
-  }
-  dbjson = JSON.parse(data);
+    dbjson={};
+  } else
+    dbjson = JSON.parse(data);
 });
 
 setInterval(function() {
@@ -47,6 +47,7 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

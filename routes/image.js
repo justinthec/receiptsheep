@@ -24,6 +24,7 @@ router.post('/', [upload, function(req, res, next) {
   var extension = filename.split('.')[filename.split('.').length-1];
   console.log(filename);
   var newFileName = (new Date().getTime())+"."+extension;
+  var id = parseInt(newFileName, 10);
   console.log(newFileName);
 
   fs.renameSync('./public/scans/'+filename,
@@ -38,7 +39,7 @@ router.post('/', [upload, function(req, res, next) {
   var dbjson = req.dbjson;
   var expenseJSON = {};
   expenseJSON.imageLocation = '/scans/'+newFileName;
-  expenseJSON.id = parseInt(newFileName, 10);
+  expenseJSON.id = id;
 
     //parser json file goes here
     var ocrscript = require('../lib/ocrscript');
@@ -48,7 +49,7 @@ router.post('/', [upload, function(req, res, next) {
       var file = fs.readFileSync(__dirname + '/../lib/temp.txt', 'utf8');
       console.log("file: " + file);
       expenseJSON.full_text = file;
-      dbjson.push(expenseJSON); //Test
+      dbjson[id]=expenseJSON; //Test
 
       // Add expense attributes
       expenseJSON.business_name = parser.parseBusinessName(file);
