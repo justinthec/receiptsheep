@@ -51,12 +51,24 @@ form.onsubmit = function(event) {
 
         receiptImage.src = json.imageLocation;
         document.getElementById("receipt-preview").innerHTML = json.full_text.replace(/\r\n/g, "<br>");
+
         var businessName = document.getElementById("businessName");
-        $(businessName).val(json.business_name).change();
+        if (json.business_name != "None found.")
+          $(businessName).val(json.business_name).change();
+        else
+          $(businessName).attr("placeholder", json.business_name).change();
+
         var phoneNumber = document.getElementById("phoneNumber");
-        $(phoneNumber).val(json.phone_number).change();
+        if (json.phone_number != "None found.")
+          $(phoneNumber).val(json.phone_number).change();
+        else
+          $(phoneNumber).attr("placeholder", json.phone_number).change();
+
         var address = document.getElementById("address");
-        $(address).val(json.address).change();
+        if (json.address != "None found.")
+          $(address).val(json.address).change();
+        else
+          $(address).attr("placeholder", json.address).change();
 
         // Create Line Items
         // var lineItemHeader = '<p class="line-items">Line Items</p>';
@@ -70,11 +82,11 @@ form.onsubmit = function(event) {
         //       <label for="lineItem2Price">Price</label>
         //     </div>
         //   </div>';
-
-
-
         var totalPrice = document.getElementById("totalPrice");
-        $(totalPrice).val(json.total_price).change();
+        if (json.total_price != "None found.")
+          $(totalPrice).val(json.total_price).change();
+        else
+          $(totalPrice).attr("placeholder", json.total_price).change();
       }
       else
         Materialize.toast('Upload has failed.', 4000);
