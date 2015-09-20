@@ -71,17 +71,26 @@ form.onsubmit = function(event) {
           $(address).attr("placeholder", json.address).change();
 
         // Create Line Items
-        // var lineItemHeader = '<p class="line-items">Line Items</p>';
-        // var item = '<div class="row">
-        //     <div class="input-field col s8">
-        //       <input id="lineItem2Description" type="text" class="validate" value="Jellybean">
-        //       <label for="lineItem2Description">Description</label>
-        //     </div>
-        //     <div class="input-field col s4">
-        //       <input id="lineItem2Price" type="text" class="validate" value="3.76">
-        //       <label for="lineItem2Price">Price</label>
-        //     </div>
-        //   </div>';
+        var lineItemHeader = '<p class="line-items">Line Items</p>';
+        $('#line-items-container').before(lineItemHeader);
+
+        for(var i=0; i<json.line_items.length; i++) {
+            var item = '<div class="row">'+
+              '<div class="input-field col s8">'+
+                '<input id="lineItem' + i + 'Description" type="text" class="validate" value="' + json.line_items[i].name + '">'+
+                '<label for="lineItem' + i + 'Description">Description</label>'+
+              '</div>'+
+              '<div class="input-field col s4">'+
+                '<input id="lineItem' + i + 'Price" type="text" class="validate" value="' + json.line_items[i].price + '">'+
+                '<label for="lineItem' + i + 'Price">Price</label>'+
+              '</div>'+
+            '</div>';
+
+            $('#line-items-container').before(item);
+            $('#lineItem' + i + 'Description').change();
+            $('#lineItem' + i + 'Price').change();
+        }
+
         var totalPrice = document.getElementById("totalPrice");
         if (json.total_price != "None found.")
           $(totalPrice).val(json.total_price).change();

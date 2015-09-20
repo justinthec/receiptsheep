@@ -55,6 +55,7 @@ router.post('/', [upload, function(req, res, next) {
       expenseJSON.phone_number = parser.parsePhoneNumber(file);
       expenseJSON.address = parser.parseAddress(file);
       expenseJSON.total_price = parser.parseTotalPrice(file);
+      expenseJSON.line_items = parser.parseLineItems(file);
       res.send(JSON.stringify(expenseJSON));
     }
     // The following references the above callback
