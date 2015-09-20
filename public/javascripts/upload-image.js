@@ -20,7 +20,7 @@ form.onsubmit = function(event) {
   var files = uploadbox.files;
   if (files.length === 0)
     return;
-  Materialize.toast('Image is uploading...', 20000);
+  Materialize.toast('Image is uploading...', 6000);
   // status.innerHTML = 'Uploading...';
 
   var formData = new FormData();
@@ -52,9 +52,29 @@ form.onsubmit = function(event) {
         receiptImage.src = json.imageLocation;
         document.getElementById("receipt-preview").innerHTML = json.full_text.replace(/\r\n/g, "<br>");
         var businessName = document.getElementById("businessName");
-        $(businessName).focus().val(json.business_name).focusout();
+        $(businessName).val(json.business_name).change();
+        var phoneNumber = document.getElementById("phoneNumber");
+        $(phoneNumber).val(json.phone_number).change();
+        var address = document.getElementById("address");
+        $(address).val(json.address).change();
+
+        // Create Line Items
+        // var lineItemHeader = '<p class="line-items">Line Items</p>';
+        // var item = '<div class="row">
+        //     <div class="input-field col s8">
+        //       <input id="lineItem2Description" type="text" class="validate" value="Jellybean">
+        //       <label for="lineItem2Description">Description</label>
+        //     </div>
+        //     <div class="input-field col s4">
+        //       <input id="lineItem2Price" type="text" class="validate" value="3.76">
+        //       <label for="lineItem2Price">Price</label>
+        //     </div>
+        //   </div>';
+
+
+
         var totalPrice = document.getElementById("totalPrice");
-        $(totalPrice).focus().val(json.total_price).focusout();
+        $(totalPrice).val(json.total_price).change();
       }
       else
         Materialize.toast('Upload has failed.', 4000);

@@ -51,8 +51,10 @@ router.post('/', [upload, function(req, res, next) {
       dbjson.push(expenseJSON); //Test
 
       // Add expense attributes
-      expenseJSON.total_price = parser.parseTotalPrice(file);
       expenseJSON.business_name = parser.parseBusinessName(file);
+      expenseJSON.phone_number = parser.parsePhoneNumber(file);
+      expenseJSON.address = parser.parseAddress(file);
+      expenseJSON.total_price = parser.parseTotalPrice(file);
       res.send(JSON.stringify(expenseJSON));
     }
     // The following references the above callback
