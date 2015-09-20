@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
     <!-- Main CSS -->
     <link type="text/css" rel="stylesheet" href="stylesheets/style.css"/>
+    <link type="text/css" rel="stylesheet" href="stylesheets/queue.css"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title><%= title %></title>
@@ -23,52 +24,81 @@
           </div>
         </div>
       </div>
+      <!-- Buttons -->
+      <div class="row">
+        <div class="col s6">
+          <a href="/" class="waves-effect waves-light btn-large upload">Home</a>
+        </div>
+        <div class="col s6">
+          <a href="/upload" class="waves-effect waves-light btn-large queue">Upload</a>
+        </div>
+      </div>
+      <!-- Approval Cards -->
       <div class="row">
         <div class="col s12">
-          <section>
-          <div class="resetCards"><a href="#">Restart</a></div>
-          <ol class="slider-list">
-            <li class="slide">
-              <img src="http://lorempixel.com/300/200" alt="img01"/>
-              <p class="message">
-                  John would probably prefer meetings with <span class="subject">an structured agenda</span>.
-              </p>    
-            </li>
-            <li class="slide">
-              <img src="http://lorempixel.com/300/200?????" alt="img01"/>
-              <p class="message">I think John is very <span class="subject">meticulous and careful</span> at work.</p>
-              
-            </li>
-            <li class="slide">
-              <img src="http://lorempixel.com/300/200????" alt="img01"/>
-              <p class="message">John seems to be a <span class="subject">creative</span> person.</p>      
-            </li>
-            <li class="slide">
-              <img src="http://lorempixel.com/300/200???" alt="img01"/>
-              <p class="message">John needs to have <span class="subject">only an idea of the end goal</span> when working on a new project.</p>
-            </li>
-            <li class="slide">
-                <img src="http://lorempixel.com/300/200??" alt="img01"/>
-              <p class="message">John is usually <span class="subject">quiet around new people</span>.</p>
-              
-            </li>
-            <li class="slide">
-              <img src="http://lorempixel.com/300/200?" alt="img01"/>
-               <p class="message">
-                  In general, John's workstyle tends to be  <span class="subject">methodical</span>.
-              </p>  
-              
-            </li>
-          </ol>
-        </section>
-          <section class="options">
-            <a href="#" class="disagree">&larr;No</a> | 
-            <a href="#" class="skip">Skip&darr;</a> |
-            <a href="#" class="agree">Yes&rarr;</a>
-          </section>
-          <section class="instructions">
-            Swipe Left to REJECT, Right to ACCEPT or Down to SKIP  (or use Arrow Keys: &larr; &rarr; &darr; )
-          </section>
+          <div class="card">
+            <div class="card-image">
+              <a href="#"><img src="scans/1442702406954.jpg"></a>
+              <span class="card-title">Total: $50.23</span>
+            </div>
+            <div class="card-content">
+              <!-- Purchase Line Items -->
+              <p>Purchase Items</p>
+              <table class="striped">
+                <thead>
+                  <tr>
+                      <th data-field="">Description</th>
+                      <th data-field="" style="float: right;">Price</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Eclair</td>
+                    <td style="float: right;">$0.87</td>
+                  </tr>
+                  <tr>
+                    <td>Jellybean</td>
+                    <td style="float: right;">$3.76</td>
+                  </tr>
+                  <tr>
+                    <td>Lollipop</td>
+                    <td style="float: right;">$7.00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Business Information -->
+              <br />
+              <p>Business Information</p>
+              <table class="striped">
+                <thead>
+                  <tr>
+                      <th data-field=""></th>
+                      <th data-field=""></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Business Name</td>
+                    <td style="float: right;">Swags R Us</td>
+                  </tr>
+                  <tr>
+                    <td>Date</td>
+                    <td style="float: right;">19/09/2015</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td style="float: right;">258 King St. N Waterloo, ON</td>
+                  </tr>
+                  <tr>
+                    <td>Phone Number</td>
+                    <td style="float: right;">(519) 747-2690</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

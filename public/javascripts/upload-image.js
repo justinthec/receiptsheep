@@ -6,6 +6,9 @@ var form = document.getElementById('image-form');
 var uploadbox = document.getElementById('image-select');
 var submit = document.getElementById('upload-button');
 var status = document.getElementById('upload-status');
+var receiptWrap = document.getElementById('receipt-block')
+var receiptImage = document.getElementById('receipt');
+//receiptImage.hide();
 
 console.log(status.innerHTML);
 
@@ -38,8 +41,16 @@ form.onsubmit = function(event) {
   xmlreq.open('POST', '/image', true);
   xmlreq.onreadystatechange = function() {
     if (xmlreq.readyState >= 3) {
-      if (xmlreq.responseText && xmlreq.responseText[0]==='{') // got JSON
+      if (xmlreq.responseText && xmlreq.responseText[0]==='{') { // got JSON
         status.innerHTML = "Upload complete.";
+        $(receiptWrap).show();
+
+        var json = JSON.parse(xmlreq.responseText);
+
+
+
+        receiptImage.src = json.imageLocation;
+      }
       else
         status.innerHTML = "Upload failed.";
     }

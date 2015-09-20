@@ -23,6 +23,15 @@
 					</div>
 				</div>
 			</div>
+			<!-- Buttons -->
+			<div class="row">
+				<div class="col s6">
+					<a href="/" class="waves-effect waves-light btn-large upload">Home</a>
+				</div>
+				<div class="col s6">
+					<a href="/queue" class="waves-effect waves-light btn-large queue">Queue</a>
+				</div>
+			</div>
 			<!-- Paragraph Description -->
 			<div class="row">
 				<div class="col s12">
@@ -43,9 +52,9 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<div class="card">
+					<div class="card" id="receipt-block">
 						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="images/receipt1.jpg">
+							<img class="activator" id="receipt" src="images/receipt1.jpg">
 						</div>
 						<div class="card-content">
 							<span class="card-title activator grey-text text-darken-4">Receipt Preview<i class="material-icons right">more_vert</i></span>
@@ -176,6 +185,7 @@
 		</footer>
 		<!-- jQuery and Materialize JavaScript -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript"> $('#receipt-block').hide() </script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 		<script src="javascripts/upload-image.js"></script>
 		<script src="javascripts/main.js"></script>
