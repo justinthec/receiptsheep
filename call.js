@@ -31,7 +31,6 @@ function testCall()
 
 
 
-
 	// function inputEntry (createDate, description, )
 
 	var new_entry = 
@@ -41,14 +40,15 @@ function testCall()
 		    "name": "Visa"
 		  },
 		  "PaymentType": "CreditCard",
+		  "TxnDate": "2015-09-15",
 		  "Line": [
 		    {
-		      "Amount": 69.69,
+		      "Amount": 17.69,
 		      "DetailType": "AccountBasedExpenseLineDetail",
 		      "AccountBasedExpenseLineDetail": {
 		       "AccountRef": {
-		          "name": "Meals and Entertainment",
-		          "value": "13"
+		          "name": "Miscellaneous",
+		          "value": "14"
 		        }
 		      }
 		    }
