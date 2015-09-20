@@ -1,11 +1,27 @@
 /* Card Animations For Queue */
 $(document).ready(function(){
 
-  $("#approve").click(function(){
-    $(this).hide('slide',{direction:'right'},1000);     
+  $("a.approve").click(function(){
+    $(this).parent().parent().parent().parent().parent().parent().hide(1000);
+    var id=this.children[0].innerHTML;
+    $.ajax({
+      type: "GET",
+      url: '/approve/'+id,
+      data: {},
+      success: function(){},
+      dataType: "text"
+    });    
   });  
 
-  $("#decline").click(function(){
-    $(this).hide('slide',{direction:'left'},1000);
+  $("a.decline").click(function(){
+    $(this).parent().parent().parent().parent().parent().parent().hide(1000); 
+    var id=this.children[0].innerHTML;
+    $.ajax({
+      type: "DELETE",
+      url: '/data/'+id,
+      data: {},
+      success: function(){},
+      dataType: "text"
+    });
   });
 });

@@ -144,10 +144,10 @@ editForm.onsubmit = function(event) {
   formData.append("totalPrice", totalPrice.value);
 
   var obj = {"id":id,
-                "businessName": businessName.value,
-                "phoneNumber": phoneNumber.value,
+                "business_name": businessName.value,
+                "phone_number": phoneNumber.value,
                 "address": address.value,
-                "totalPrice": totalPrice.value};
+                "total_price": totalPrice.value};
   var params = Object.keys(obj).map(function(o) {
     return [o, obj[o]].join("=");
   }).join("&");

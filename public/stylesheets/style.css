@@ -79,7 +79,7 @@ footer.page-footer {
 .button-container .danger:hover {
 	background-color: #bf360c;
 }
-.card .card-image img {
+.card.queuecard .card-image img {
 	max-height: 250px;
 }
 

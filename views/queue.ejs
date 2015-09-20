@@ -34,16 +34,16 @@
         </div>
       </div>
       <div class="row">
-        <h2><%= queue %></h2>
+        <h2><%= queue.length %></h2>
       </div>
       <!-- Approval Cards -->
-      <% for(var i=0; i < queue.length; i++) { %>
+      <% for(var i=0; i < Object.keys(queue).length; i++) { %>
          <div class="row">
           <div class="col s12">
-            <div class="card">
+            <div class="card queuecard">
               <div class="card-image">
-                <img src="<%= queue[i].imageLocation %>">
-                <span class="card-title card-title-queue">Total: $<%= queue[i].total_price %></span>
+                <img src="<%= queue[Object.keys(queue)[i]].imageLocation %>">
+                <span class="card-title card-title-queue">Total: $<%= queue[Object.keys(queue)[i]].total_price %></span>
               </div>
               <div class="card-content">
                 <!-- Purchase Line Items -->
@@ -56,10 +56,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% for(var j=0; j < queue[i].line_items.length; j++) { %>
+                    <% for(var j=0; j < queue[Object.keys(queue)[i]].line_items.length; j++) { %>
                     <tr>
-                      <td><%= queue[i].line_items[j].name %></td>
-                      <td style="float: right;"><%= queue[i].line_items[j].price %></td>
+                      <td><%= queue[Object.keys(queue)[i]].line_items[j].name %></td>
+                      <td style="float: right;"><%= queue[Object.keys(queue)[i]].line_items[j].price %></td>
                     </tr>
                     <% } %>
                   </tbody>
@@ -77,15 +77,15 @@
                   <tbody>
                     <tr>
                       <td>Business Name</td>
-                      <td style="float: right;"><%= queue[i].business_name %></td>
+                      <td style="float: right;"><%= queue[Object.keys(queue)[i]].business_name %></td>
                     </tr>
                     <tr>
                       <td>Address</td>
-                      <td style="float: right;"><%= queue[i].address %></td>
+                      <td style="float: right;"><%= queue[Object.keys(queue)[i]].address %></td>
                     </tr>
                     <tr>
                       <td>Phone Number</td>
-                      <td style="float: right;"><%= queue[i].phone_number %></td>
+                      <td style="float: right;"><%= queue[Object.keys(queue)[i]].phone_number %></td>
                     </tr>
                   </tbody>
                 </table>
@@ -93,10 +93,10 @@
               <div class="row">
                 <div class="button-container">
                   <div class="col s6">
-                    <a class="waves-effect waves-light btn-large danger" id="decline">Decline</a>
+                    <a class="waves-effect waves-light btn-large danger decline"><div name="id" style="display:none;"><%= Object.keys(queue)[i] %></div>Decline</a>
                   </div>
                   <div class="col s6">
-                    <a class="waves-effect waves-light btn-large success" id="approve">Approve</a>
+                    <a class="waves-effect waves-light btn-large success approve"><div name="id" style="display:none;"><%= Object.keys(queue)[i] %></div>Approve</a>
                   </div>
                 </div>
               </div>

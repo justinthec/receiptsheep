@@ -13,29 +13,3 @@
   margin-left: -400px;
   cursor: w-resize;
 }
-.approve {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 2px solid #4caf50;
-  background-color: #4caf50;
-  color: white;
-  text-transform: uppercase;
-  font-size: 25px;
-  position: absolute;
-  top: 40px;
-  right: 60px;
-  text-shadow: none;
-}
-.decline {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 2px solid #f44336;
-  background-color: #f44336;
-  color: white;
-  text-transform: uppercase;
-  font-size: 25px;
-  position: absolute;
-  top: 40px;
-  right: 60px;
-  text-shadow: none;
-}
